@@ -1,0 +1,3 @@
+#!/bin/bash
+pgrep xfce4-panel && xfce4-panel -q || xfce4-panel
+

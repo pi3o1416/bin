@@ -1,0 +1,8 @@
+#!/bin/bash
+#open a virtual env
+
+
+read -p "virtual environment name(in ~/Document/python/): " env
+. /home/monir/Documents/python/$env/bin/activate
+which python
+cd /home/monir/Documents/python/$env/
