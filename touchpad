@@ -2,14 +2,11 @@
 
 
 current_state=$(synclient -l | grep Touch)
-echo $current_state, "hudai"
 temp="1"
 
 if [[ "$current_state" == *"$temp"* ]]; then
     synclient TouchpadOff=0
-    echo "hello"
 else
     synclient TouchpadOff=1
-    echo "world"
 fi
 
