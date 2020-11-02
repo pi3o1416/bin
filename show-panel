@@ -3,5 +3,8 @@
 
 xdotool mousemove 1300 800
 sleep 2
-xdotool mousemove 800 400
+eval $(xdotool getmouselocation --shell)
+if [[ $X == 1300 && $Y == 767 ]]; then      #if mouse is still in panel move it to another location
+    xdotool mousemove 800 400   
+fi
 
