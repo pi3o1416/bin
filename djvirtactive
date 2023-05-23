@@ -1,0 +1,9 @@
+#!/bin/bash
+
+current_dir=$(pwd)
+IFS='/' read -ra parts <<< "$current_dir"
+path_joined=$(printf '/%s' "${parts[@]:0:6}")
+path_joined=${path_joined:1}
+source_path="${path_joined}/venv/bin/activate"
+echo "$source_path"
+source $source_path

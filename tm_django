@@ -1,18 +1,18 @@
 #!/bin/bash
 #create a tmux session for django
 
-. /home/monir/Documents/python/django/bin/activate
 read -p "session name: " session
 read -p "number of app: " total_app
-tmux new-session -d -s $session -n $session -c ~/Documents/python/django/$session/$session
+. /home/monir/Documents/aamarpay/$session/bin/activate
+tmux new-session -d -s $session -n $session -c ~/Documents/aamarpay/$session/$session/$session
 counter=1
 while [ $counter -le $total_app ]
 do
     read -p "app name: " temp
-    tmux new-window -n $temp -c ~/Documents/python/django/$session/$temp
+    tmux new-window -n $temp -c ~/Documents/aamarpay/$session/$session/$temp
     ((counter++))
 done
-tmux new-window -n shell -c ~/Documents/python/django/$session
-tmux new-window -n server -c ~/Documents/python/django/$session
+tmux new-window -n shell -c ~/Documents/aamarpay/$session/$session
+tmux new-window -n server -c ~/Documents/aamarpay/$session/$session
 tmux a
     
